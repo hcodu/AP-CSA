@@ -1,6 +1,6 @@
 Aaron	1000												
-Abdiel	1001
-Abdullah	1002												
+Abdiel  1001
+Abdullah	1002
 Abel	1003												
 Abraham	1004												
 Abram	1005												
