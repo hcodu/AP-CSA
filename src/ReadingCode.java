@@ -31,4 +31,32 @@ public class ReadingCode {
         return accounts;
 
     }
+    public  static Horse[]  readh(String fileName) {
+        Horse[] barn=new Horse[5];
+        //System.out.println("Reading File from Java code");
+
+        try{
+
+            File file = new File(fileName);
+
+            Scanner in = new Scanner(file);
+
+            // Read file line by line and print on the console
+            for (int i=0; i<5; i++)   {
+
+                String name=in.next();
+                if(!name.equals("null")){
+                    int w=in.nextInt();
+                    //System.out.println(name+"     "+w);
+                    barn[i]= new Horse(name, w);}
+            }
+            //Close the buffer reader
+            in.close();
+        }catch(Exception e){
+            System.out.println("Error while reading file line by line:" + e.getMessage());
+        }
+        return barn;
+
+    }
 }
+
