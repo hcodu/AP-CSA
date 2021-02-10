@@ -22,12 +22,30 @@ public class HorseBarn {
     }
 
     public void consolidate(){
-        ArrayList<Horse> newArList = new ArrayList<Horse>();
-        Collections.addAll(newArList, spaces);
-
+        Horse[] newAr = new Horse[5];
+        int count = 0;
         for(int i = 0; i < spaces.length; i++) {
 
+//            if(spaces[i] != null) {
+//                newAr[i] = spaces[i];
+//                //System.out.println(newAr[i].getName());
+//            }
+//            else {
+//                if(count < 1) {
+//                    newAr[i] = spaces[i + 1];
+//                    //System.out.println(newAr[i].getName());
+//                }
+//                else {
+//                    newAr[i] = null;
+//                    //System.out.println(newAr[i].getName());
+//                }
+//                i++;
+//                System.out.println(newAr[i]);
+//                System.out.println(i);
+//            }
+
         }
+        spaces = newAr;
     }
 
     public String toString(){

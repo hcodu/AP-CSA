@@ -9,7 +9,7 @@ public class HorseBarnTester {
 
 
         myBarn.consolidate();
-        System.out.println(myBarn);
+        //System.out.println(myBarn);
 
         //System.out.println(myBarn.findHorseSpace("Street"));
 
