@@ -12,39 +12,30 @@ public class HorseBarn {
     public int findHorseSpace(String name) {
         int index = -1;
         for(int i = 0; i < spaces.length; i++) {
-            System.out.println(i + spaces[i].getName());
-//            if((spaces[i].getName()).equals(name)) {
-//                index = i;
-//                return index + 1;
-//            }
+            if(spaces[i] != null) {
+                if(spaces[i].getName().equals(name)) {
+                    return i + 1;
+                }
+            }
         }
         return index;
     }
 
     public void consolidate(){
+        int[] indexes = new int[5];
         Horse[] newAr = new Horse[5];
         int count = 0;
         for(int i = 0; i < spaces.length; i++) {
-
-//            if(spaces[i] != null) {
-//                newAr[i] = spaces[i];
-//                //System.out.println(newAr[i].getName());
-//            }
-//            else {
-//                if(count < 1) {
-//                    newAr[i] = spaces[i + 1];
-//                    //System.out.println(newAr[i].getName());
-//                }
-//                else {
-//                    newAr[i] = null;
-//                    //System.out.println(newAr[i].getName());
-//                }
-//                i++;
-//                System.out.println(newAr[i]);
-//                System.out.println(i);
-//            }
-
+            if(spaces[i] != null) {
+                indexes[count] = i; //find index of the not null objects in the spaces array
+                count++; //
+            }
         }
+
+        for (int i = 0; i < count; i++) {
+            newAr[i] = spaces[indexes[i]];
+        }
+
         spaces = newAr;
     }
 

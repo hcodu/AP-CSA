@@ -8,12 +8,12 @@ public class HorseBarnTester {
         HorseBarn myBarn = new HorseBarn(myHorses);
 
 
+
+        System.out.println(myBarn);
         myBarn.consolidate();
-        //System.out.println(myBarn);
 
-        //System.out.println(myBarn.findHorseSpace("Street"));
-
-        //System.out.println(myBarn);
+        System.out.println(myBarn.findHorseSpace("Street"));
+        System.out.println(myBarn);
 
     }
 }
