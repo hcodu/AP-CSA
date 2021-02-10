@@ -14,7 +14,7 @@ public class HorseBarn {
         for(int i = 0; i < spaces.length; i++) {
             if(spaces[i] != null) {
                 if(spaces[i].getName().equals(name)) {
-                    return i + 1;
+                    return i;
                 }
             }
         }
