@@ -10,7 +10,9 @@ public class Friend {
     }
 
     public void improveFS() {
-        level++;
+        if(level < 4) {
+            level++;
+        }
     }
 
     public String toString() {

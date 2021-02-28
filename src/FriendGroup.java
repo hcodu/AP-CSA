@@ -38,6 +38,7 @@ public class FriendGroup {
     public void addFriend(Friend aFriend) {
         friends.add(aFriend);
     }
+
     public void addFriend(int index, Friend aFriend) {
         friends.add(index, aFriend);
     }
@@ -47,8 +48,8 @@ public class FriendGroup {
     }
 
     public void removeAll(int le) {
-        for(Friend i: friends) {
-            if(i.getLevel() == le) {
+        for(int i = 0; i < friends.size() - 1; i++) {
+            if(friends.get(i).getLevel() == le) {
                 friends.remove(i);
             }
         }
@@ -63,10 +64,15 @@ public class FriendGroup {
         }
     }
 
-    public void improveFriend(String first) {
+    public boolean improveFriend(String first) {
         if(this.improvable(first) == true) {
             this.findFriend(first).improveFS();
+            return true;
         }
+        else {
+            return false;
+        }
+
     }
 
 }
