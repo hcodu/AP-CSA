@@ -17,9 +17,7 @@ public class WordList{
     //Postcondition: all words that are exactly len letters long have been removed from this Wordlist, with the order of the remaining words unchanged
     public void removeWordsOfLength(int len){
         for(int i = 0; i < myList.size(); i++) {
-            //System.out.println(myList.get(i) + myList.get(i).length());
             if(myList.get(i).length() == len) {
-                //System.out.println(myList.get(i) + myList.get(i).length());
                 myList.remove(i);
                 i--;
             }
