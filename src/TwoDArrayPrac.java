@@ -5,13 +5,16 @@ public class TwoDArrayPrac {
     public static void main(String[] args) {
         int[][] myArray= read("numbers.txt");
 
-        System.out.println(sum(myArray));
-        System.out.println(rowSum(myArray, 2));
-        System.out.println(colSum(myArray, 1));
-        System.out.println(sum2(myArray));
-        System.out.println(findLargest(myArray));
-        System.out.println(largestByRow(myArray, 1));
-        //System.out.println(myArray.length);
+//        System.out.println(sum(myArray));
+//        System.out.println(rowSum(myArray, 2));
+//        System.out.println(colSum(myArray, 1));
+//        System.out.println(sum2(myArray));
+//        System.out.println(findLargest(myArray));
+//        System.out.println(largestByRow(myArray, 12));
+//        System.out.println(findLargest2(myArray));
+//        printTranspose(myArray);
+//        System.out.println(myArray.length);
+        
     }
     public  static int[][]  read(String fileName) {
         int[][] toReturn=new int[12][6];
@@ -95,12 +98,31 @@ public class TwoDArrayPrac {
 
     public static int largestByRow(int[][] arr, int row) {
         int largest = arr[row - 1][0];
-        for(int i = 0; i < arr.length ; i++) {
-            if(arr[row - 1][i + 1] > largest) {
-                largest = arr[row - 1][i + 1];
+        for(int i = 0; i < arr[0].length ; i++) {
+            if(arr[row - 1][i] > largest) {
+                largest = arr[row - 1][i];
             }
         }
         return largest;
+    }
+
+    public static int findLargest2(int[][] arr) {
+        int largest = largestByRow(arr, 1);
+        for(int i = 1; i < arr.length; i++) {
+            if(largestByRow(arr, i + 1) > largest) {
+                largest = largestByRow(arr, i + 1);
+            }
+        }
+        return largest;
+    }
+
+    public static void printTranspose(int[][] arr) {
+        for(int row = 0; row < arr[0].length; row++){
+            for(int col = 0; col < arr.length; col++){
+                System.out.print(arr[col][row] + " ");
+            }
+            System.out.println();
+        }
     }
 
 }
