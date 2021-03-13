@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 
-public class TwoDArrayPrac {
+public class TwoDArrayLab1 {
     public static void main(String[] args) {
         int[][] myArray= read("numbers.txt");
 
