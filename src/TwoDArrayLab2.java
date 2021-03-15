@@ -22,12 +22,12 @@ public class TwoDArrayLab2 {
 
     //Convert the integer array to a 2-D array according to the dimensions
     public static double[][] convert(double[] theList, int rows, int cols){
-        double newArr[][] = new double[cols][rows];
+        double newArr[][] = new double[rows][cols];
         int i = 0;
         while(i < (rows * cols)) {
-            for(int x = 0; x < rows; x++) {
-                for(int z = 0; z < cols; z++) {
-                    newArr[x][z] = theList[i];
+            for(int col = 0; col < rows; col++) {
+                for(int row = 0; row < cols; row++) {
+                    newArr[col][row] = theList[i];
                     i++;
                 }
             }
@@ -49,25 +49,55 @@ public class TwoDArrayLab2 {
 
     //returns the row number that has the highest average
     public static int findHighestAvarageRow(double[][] theArray){
-        double sum = 0, count = 0, largest = 0;
+        int highestAvgRow = 0;
+        double highestAvg = 0;
+        double a1 = 0, a2 = 0;
+        double s1 = 0, s2 = 0;
+        int counter1 = 0, counter2 = 0;
+        for (int row = 0; row < theArray.length - 1; row ++) {
+            for (int col = 0; col < theArray[0].length; col++) {
+                s1 = s1 + theArray[row][col];
+                counter1++;
+            }
+            for (int col = 0; col < theArray[0].length; col++) {
+                s2 = s2 + theArray[row + 1][col];
+                counter2++;
+            }
+            a1 = s1 / counter1;
+            a2 = s2 / counter2;
+            if (a2 > a1 && a2 > highestAvg) {
+                highestAvgRow = row + 1;
+                highestAvg = a2;
+            }
 
-        for(int i = 0; i < theArray[0].length; i++) {
-            sum = sum + theArray[0][i];
+            counter1 = 0;
+            counter2 = 0;
+            s1 = 0;
+            s2 = 0;
         }
-        largest = sum / theArray[0].length;
-
-
-//        for(int i = 0; i < theArray.length; i++) {
-//            for(int x = 0; x < theArray[0].length; i++) {
-//                sum = sum + theArray[i][x];
-//            }
-//        }
-        return (int)largest;
+        return highestAvgRow + 1;
     }
-//
-//    //returns the column number that has the highest average
-//    public static int findHighestAvarageCol(double[][] theArray){
-//
-//    }
+
+    //returns the column number that has the highest average
+    public static int findHighestAvarageCol(double[][] theArray){
+        int counter = 0;
+        double sum = 0;
+        double highestAvg = 0;
+        int highestAvgCol = 0;
+        for(int col = 0; col < theArray[0].length; col++) {
+            for (int row = 0; row < theArray.length; row++) {
+                sum = sum + theArray[row][col];
+                counter++;
+            }
+            if (sum / counter > highestAvg) {
+                highestAvg = sum /counter;
+                highestAvgCol = col + 1;
+            }
+            sum = 0;
+            counter = 0;
+        }
+
+        return highestAvgCol;
+    }
 
 }
